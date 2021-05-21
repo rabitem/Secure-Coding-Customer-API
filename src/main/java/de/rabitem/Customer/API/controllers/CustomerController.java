@@ -43,7 +43,7 @@ public class CustomerController {
         }
     }
 
-    @PostMapping(value = "/addCustomer")
+    @PostMapping(value = "/addCustomer", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customer> addCustomer(@Valid @RequestBody(required = true) final Customer customer) {
         this.customerService.addCustomer(customer);
         return ResponseEntity.status(HttpStatus.OK).body(customer);
