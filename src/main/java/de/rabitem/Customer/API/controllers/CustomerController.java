@@ -31,7 +31,7 @@ public class CustomerController {
                         + id + "!"));
     }
 
-    @DeleteMapping(value = "/deleteCustomerById", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/deleteCustomerById")
     public ResponseEntity<String> deleteCustomerById(@RequestParam(name = "id", required = true) int id) {
         Optional<Customer> customer = this.customerService.getCustomerById(id);
         if (customer.isPresent()) {
@@ -43,7 +43,7 @@ public class CustomerController {
         }
     }
 
-    @PostMapping(value = "/addCustomer", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/addCustomer")
     public ResponseEntity<Customer> addCustomer(@Valid @RequestBody(required = true) final Customer customer) {
         this.customerService.addCustomer(customer);
         return ResponseEntity.status(HttpStatus.OK).body(customer);
