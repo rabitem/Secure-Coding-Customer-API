@@ -1,9 +1,7 @@
 package de.rabitem.Customer.API.services;
 
 import de.rabitem.Customer.API.entities.Customer;
-import de.rabitem.Customer.API.exceptions.CustomerNotFoundException;
 import de.rabitem.Customer.API.repositories.CustomerRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
